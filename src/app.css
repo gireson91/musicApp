@@ -1,0 +1,49 @@
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+#parent {
+position:relative; width:700px; height:300px
+}
+.stave {
+  height: 100%; position:absolute; top:20px; left: 20px; z-index: 1
+}
+.note {
+  height: 155px; position:absolute; top:5em; left: 15em; z-index: 2; transform: rotate(180deg)
+}
+.noteA {
+  height: 155px; position:absolute; top:3.3em; left: 15em; z-index: 2
+}
+.noteB {
+  height: 155px; position:absolute; top:9.5em; left: 15em; z-index: 2; transform: rotate(180deg)
+}
+.noteC {
+  height: 155px; position:absolute; top:8.4em; left: 15em; z-index: 2; transform: rotate(180deg)
+}
+.noteD {
+  height: 155px; position:absolute; top:7.3em; left: 15em; z-index: 2; transform: rotate(180deg)
+}
+.noteHighE {
+  height: 155px; position:absolute; top:6.15em; left: 15em; z-index: 2; transform: rotate(180deg)
+}
+.noteHighF {
+  height: 155px; position:absolute; top:5.1em; left: 15em; z-index: 2; transform: rotate(180deg)
+}
+.noteLowE {
+  height: 155px; position:absolute; top:6.6em; left: 15em; z-index: 2; 
+}
+.noteLowF {
+  height: 155px; position:absolute; top:5.6em; left: 15em; z-index: 2
+}
+.noteG {
+  height: 155px; position:absolute; top:4.4em; left: 15em; z-index: 2
+}
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
