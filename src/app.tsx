@@ -32,7 +32,7 @@ export function App() {
   }))<{ $note?: string }>`
     position: absolute;
     left: 35em;
-    top: ${(props) => props.$note};
+    top: ${(props) => props.note};
     height: 12em;
   `;
 
@@ -61,7 +61,7 @@ export function App() {
   return (
     <Wrapper>
       <StyledStave src={stave} />
-      <StyledNote $note={notes[count]} src={crotchet} />{" "}
+      <StyledNote note={notes[count]} src={crotchet} />{" "}
       <Button onClick={() => nextNote()}>Next Note</Button>
     </Wrapper>
   );
