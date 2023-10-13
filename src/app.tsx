@@ -62,7 +62,6 @@ export function App() {
     <Wrapper>
       <StyledStave src={stave} />
       <StyledNote $note={notes[count]} src={crotchet} />{" "}
-      {/* Update the prop name to $note */}
       <Button onClick={() => nextNote()}>Next Note</Button>
     </Wrapper>
   );
