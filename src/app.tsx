@@ -11,42 +11,42 @@ export function App() {
   `;
 
   const Button = styled.button`
-    position: absolute;
-    top: 40em;
-    left: 36em;
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    border: 2px solid #bf4f74;
-    border-radius: 3px;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10em;
   `;
 
   const StyledStave = styled.img`
     position: relative;
-    height: 50em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 50em;
   `;
 
   const StyledNote = styled.img.attrs((props) => ({
     $note: props.$note,
-  }))<{ $note?: string }>`
+    $rotate: props.$rotate,
+  })) <{ $note?: string }>`
     position: absolute;
-    left: 35em;
     top: ${(props) => props.note};
+    transform: rotate(${(props) => props.rotate});
     height: 12em;
   `;
 
   // all top position values for the note to be placed on the stave from Low E to High F respectively
   let notes: string[] = [
-    "26em",
-    "24.7em",
-    "23.2em",
-    "21.9em",
-    "20.5em",
-    "19.1em",
-    "17.8em",
-    "16.4em",
-    "15em",
+    "34.8em",
+    "33.2em",
+    "32em",
+    "30.5em",
+    "38.3em",
+    "37em",
+    "35.7em",
+    "34.3em",
+    "33em",
   ];
 
   let [count, setCount] = useState(0);
@@ -58,11 +58,24 @@ export function App() {
       return setCount(0);
     }
   }
+
+  function noteRotate() {
+    if (count < 4) {
+      return "0deg";
+    } else {
+      return "180deg";
+    }
+  }
+
   return (
     <Wrapper>
-      <StyledStave src={stave} />
-      <StyledNote note={notes[count]} src={crotchet} />{" "}
-      <Button onClick={() => nextNote()}>Next Note</Button>
+      <div>
+        <StyledStave src={stave} />
+        <StyledNote note={notes[count]} rotate={noteRotate()} src={crotchet} />{" "}
+      </div>
+      <div>
+        <Button onClick={() => nextNote()}>Next Note</Button>
+      </div>
     </Wrapper>
   );
 }
